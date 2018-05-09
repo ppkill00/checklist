@@ -18,7 +18,9 @@ def main():
         parse_abstract(content,y)
         parse_detail(content)
         y = y+1
+    worksheet2.set_column(4,4,50)
     workbook.close()
+
 
 def get_object(data):
     # print(data) #데이터 파일명
@@ -40,13 +42,14 @@ def parse_detail(contents):
     os,hostname,ip = filename[0].split("@@")
     result_1 =re.findall(r'\[\d*-START\]\n(.*?)\n\[\d*-END\]',contents,re.MULTILINE|re.DOTALL)
     global glo_x
-    print(glo_x)
+    #print(glo_x)
 
     for data in result_1:
         worksheet2.write(glo_x,1,os)
         worksheet2.write(glo_x,2,ip)
         worksheet2.write(glo_x,3,hostname)
         worksheet2.write(glo_x,4,data)
+        worksheet2.set_row(glo_x,15 if data.count('\n')==0 else data.count('\n')*15)
         glo_x=glo_x+1
 
 def parse_abstract(contents,y):
