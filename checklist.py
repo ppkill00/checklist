@@ -49,7 +49,7 @@ def parse_detail(contents):
         worksheet2.write(glo_x,2,ip)
         worksheet2.write(glo_x,3,hostname)
         worksheet2.write(glo_x,4,data)
-        worksheet2.set_row(glo_x,15 if data.count('\n')==0 else data.count('\n')*15)
+        worksheet2.set_row(glo_x,15 if data.count('\n')==0 else (data.count('\n')+1)*15)
         glo_x=glo_x+1
 
 def parse_abstract(contents,y):
