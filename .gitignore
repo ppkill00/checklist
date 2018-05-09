@@ -1,0 +1,16 @@
+*.pyc
+*.json
+.~*
+/include
+/data
+/bin
+/checklist
+/share
+/lib
+*~
+__pycache__
+myvenv
+db.sqlite3
+*.xlsx
+*.txt
+
