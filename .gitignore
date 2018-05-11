@@ -13,4 +13,7 @@ __pycache__
 myvenv
 db.sqlite3
 *.txt
-
+/build
+*.py_bk
+*.spec
+/dist
