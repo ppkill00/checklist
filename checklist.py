@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 #version : python 3.5~
 #필요패키지 : xlsxwriter // 
 #pip install xlsxwriter
@@ -30,8 +31,9 @@ def main():
 
 def get_object(data):
     # print(data) #데이터 파일명
-    objects = open('data/'+data,'r')
+    objects = open('data/'+data,'r',errors='ignore') #인코딩 문제있는 양반들이 있어 errors추가
     contents = data+ '\n\n'
+    print (objects)
     for line in objects.readlines():
         contents += line
     return contents #파일 컨텐츠를 전달한다. (파일내용전달)
