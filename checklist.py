@@ -31,7 +31,7 @@ def main():
 
 def get_object(data):
     # print(data) #데이터 파일명
-    objects = open('data/'+data,'r',errors='ignore') #인코딩 문제있는 양반들이 있어 errors추가
+    objects = open('data/'+data,'r',errors='ignore') #인코딩 문제있어 errors추가
     contents = data+ '\n\n'
     print (objects)
     for line in objects.readlines():
