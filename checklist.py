@@ -31,7 +31,7 @@ def main():
 
 def get_object(data):
     # print(data) #데이터 파일명
-    objects = open('data/'+data,'r',errors='ignore') #인코딩 문제있어 errors추가
+    objects = open('data/'+data,'r',errors='ignore', encoding='utf8') #인코딩 문제있어 errors추가
     contents = data+ '\n\n'
     print (objects)
     for line in objects.readlines():
@@ -53,13 +53,13 @@ def parse_detail(contents):
     print(glo_x)
 
     for data in result_1:
-        worksheet2.write(glo_x,1,os)
-        worksheet2.write(glo_x,2,ip)
-        worksheet2.write(glo_x,3,hostname)
-        worksheet2.write(glo_x,4,data[0])
-        worksheet2.write(glo_x,5,data[1])
-        worksheet2.write(glo_x,6,data[3])
-        worksheet2.write(glo_x,7,data[2])
+        worksheet2.write(glo_x,0,os)
+        worksheet2.write(glo_x,1,ip)
+        worksheet2.write(glo_x,2,hostname)
+        worksheet2.write(glo_x,3,data[0])
+        worksheet2.write(glo_x,4,data[1])
+        worksheet2.write(glo_x,5,data[3])
+        worksheet2.write(glo_x,6,data[2])
         worksheet2.set_row(glo_x,15 if data.count('\n')==0 else (data.count('\n')+1)*15)
         glo_x=glo_x+1
 
